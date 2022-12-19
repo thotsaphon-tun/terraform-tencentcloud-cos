@@ -6,13 +6,13 @@ variable "create_bucket_object" {
 
 variable "bucket_name" {
   description = "The name of the bucket."
-  type = "string"  
+  type = string  
   default = ""
 }
 
 variable "key" {
   description = "The name of the object once it is in the bucket."
-  type = "string"  
+  type = string  
   default = ""
 }
 
@@ -58,11 +58,13 @@ variable "etag" {
   default = ""
 }
 
+/*
 variable "source" {
   description = "The path to the source file being uploaded to the bucket."
   type = string
   default = ""
 }
+*/
 
 variable "storage_class" {
   description = "Object storage type, Available values include STANDARD_IA, MAZ_STANDARD_IA, INTELLIGENT_TIERING, MAZ_INTELLIGENT_TIERING, ARCHIVE, DEEP_ARCHIVE."

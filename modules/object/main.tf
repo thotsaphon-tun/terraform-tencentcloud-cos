@@ -1,4 +1,4 @@
-resource "tencentcloud_cos_bucket" "cos" {
+resource "tencentcloud_cos_bucket_object" "cos_object" {
   count = var.create_bucket_object ? 1 : 0
 
   bucket = var.bucket_name
@@ -12,7 +12,7 @@ resource "tencentcloud_cos_bucket" "cos" {
   content = var.content
 
   etag = var.etag
-  source = var.source
+  #source = var.source
   storage_class = var.storage_class 
  
   tags = var.tags

@@ -1,7 +1,7 @@
 output "bucket_id" {
-  value = tencentcloud_cos_bucket.cos.*.id
+  value = module.cos_bucket.bucket_id
 }
 
 output "bucket_url" {
-  value = tencentcloud_cos_bucket.cos.*.cos_bucket_url
+  value = module.cos_bucket.bucket_url
 }

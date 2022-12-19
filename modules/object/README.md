@@ -22,6 +22,8 @@ Creates COS bucket objects with different configurations.
 |------|------|
 | [tencentcloud_cos_bucket_object.this](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/cos_bucket_object) | resource |
 
+#### Note tha this module do not supported the "source" inut parameter, due to the reserved words "source" of the terraform module.
+
 ## Inputs
 
 | Name | Description | Type | Default | Required |
