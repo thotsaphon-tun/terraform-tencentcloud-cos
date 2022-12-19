@@ -49,7 +49,7 @@ variable "content_type" {
 variable "content" {
   description = "Literal string value to use as the object content, which will be uploaded as UTF-8-encoded text."
   type = string
-  default = ""
+  default = null
 }
 
 variable "etag" {
@@ -58,13 +58,12 @@ variable "etag" {
   default = ""
 }
 
-/*
-variable "source" {
+variable "source_path" {
   description = "The path to the source file being uploaded to the bucket."
   type = string
-  default = ""
+  default = null
 }
-*/
+
 
 variable "storage_class" {
   description = "Object storage type, Available values include STANDARD_IA, MAZ_STANDARD_IA, INTELLIGENT_TIERING, MAZ_INTELLIGENT_TIERING, ARCHIVE, DEEP_ARCHIVE."

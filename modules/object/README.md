@@ -22,8 +22,6 @@ Creates COS bucket objects with different configurations.
 |------|------|
 | [tencentcloud_cos_bucket_object.this](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/cos_bucket_object) | resource |
 
-#### Note tha this module do not supported the "source" inut parameter, due to the reserved words "source" of the terraform module.
-
 ## Inputs
 
 | Name | Description | Type | Default | Required |
@@ -36,9 +34,9 @@ Creates COS bucket objects with different configurations.
 | content_disposition | Specifies presentational information for the object. | string | "" | no
 | content_encoding | Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type referenced by the Content-Type header field. | string | "" | no
 | content_type | A standard MIME type describing the format of the object data. | string | "" | no
-| content | Literal string value to use as the object content, which will be uploaded as UTF-8-encoded text. | string | "" | no
+| content | Literal string value to use as the object content, which will be uploaded as UTF-8-encoded text. | string | null | no
 | etag | The ETag generated for the object (an MD5 sum of the object content). | string | "" | no
-| source | The path to the source file being uploaded to the bucket. | string | "" | no
+| source | The path to the source file being uploaded to the bucket. | string | null | no
 | storage_class | Object storage type, Available values include STANDARD_IA, MAZ_STANDARD_IA, INTELLIGENT_TIERING, MAZ_INTELLIGENT_TIERING, ARCHIVE, DEEP_ARCHIVE. | string | "" | no
 | tags | A mapping of tags to assign to the object. | map(string) | {} | no
 

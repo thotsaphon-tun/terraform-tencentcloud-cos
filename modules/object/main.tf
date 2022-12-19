@@ -9,10 +9,10 @@ resource "tencentcloud_cos_bucket_object" "cos_object" {
   content_disposition = var.content_disposition
   content_encoding = var.content_encoding
   content_type = var.content_type
-  content = var.content
+  content = var.content 
 
   etag = var.etag
-  #source = var.source
+  source = var.source_path
   storage_class = var.storage_class 
  
   tags = var.tags
