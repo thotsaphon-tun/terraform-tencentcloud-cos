@@ -1,19 +1,19 @@
 locals {
-  region = "app-guangzhou"
-  bucket = "my-bucket-12345678"
+  region         = "app-guangzhou"
+  bucket         = "my-bucket-12345678"
   replica_bucket = "mysql-bucket-12345987"
 }
 
 provider "tencentcloud" {
-  region  = local.region
+  region = local.region
 }
 
 module "cos_bucket" {
   source = "../../"
 
   bucket_name = local.bucket
-  bucket_acl    = "private"
-  
+  bucket_acl  = "private"
+
   cors_rules = [
     {
       allowed_origins = ["http://*.abc.com"]
@@ -41,12 +41,12 @@ module "cos_bucket" {
     }
   ]
 
-  log_enable = "true"
-  log_prefix = "MyLogPrefix"
+  log_enable        = "true"
+  log_prefix        = "MyLogPrefix"
   log_target_bucket = "mylog-12345678"
 
   multi_az = true
-  
+
   origin_domain_rules = [
     {
       domain = "abc.example.com"
@@ -71,7 +71,7 @@ module "cos_bucket" {
     }
   ]
 
-  replica_role      = "qcs::cam::uin/100000000001:uin/100000000001"
+  replica_role = "qcs::cam::uin/100000000001:uin/100000000001"
 
   replica_rules = [
     {
@@ -81,9 +81,9 @@ module "cos_bucket" {
       destination_bucket = "qcs::cos:ap-shenzhen::${local.replica_bucket}"
     }
   ]
-  
+
   versioning_enable = true
-  
+
   website = [
     {
       index_document = "index.html"
