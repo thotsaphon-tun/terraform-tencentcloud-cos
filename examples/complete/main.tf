@@ -1,17 +1,20 @@
 locals {
-  region         = "app-guangzhou"
-  bucket         = "my-bucket-12345678"
-  replica_bucket = "mysql-bucket-12345987"
+  region         = "ap-guangzhou"
+  bucket         = "myftb"
+  replica_bucket = "myftbr"
 }
 
 provider "tencentcloud" {
   region = local.region
 }
 
+data "tencentcloud_user_info" "this" {}
+
 module "cos_bucket" {
   source = "../../"
 
   bucket_name = local.bucket
+  appid = data.tencentcloud_user_info.this.app_id
   bucket_acl  = "private"
 
   cors_rules = [
