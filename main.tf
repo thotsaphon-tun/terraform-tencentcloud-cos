@@ -1,5 +1,5 @@
 locals {
-  bucket = "${var.bucket_name}-${var.appid}"
+  bucket       = "${var.bucket_name}-${var.appid}"
   replica_role = var.versioning_enable ? var.replica_role : null
 }
 
@@ -78,7 +78,7 @@ resource "tencentcloud_cos_bucket" "cos" {
     }
   }
 
-  replica_role = local.replica_role
+  replica_role = local.replica_role != "" ? local.replica_role : null
 
   dynamic "replica_rules" {
     for_each = var.replica_rules
