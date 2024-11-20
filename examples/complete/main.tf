@@ -14,7 +14,6 @@ module "cos_bucket" {
   source = "../../"
 
   bucket_name = local.bucket
-  appid = data.tencentcloud_user_info.this.app_id
   bucket_acl  = "private"
 
   cors_rules = [

@@ -13,7 +13,6 @@ data "tencentcloud_user_info" "this" {}
 module "cos_bucket" {
   source = "../../"
 
-  appid = data.tencentcloud_user_info.this.app_id
   bucket_name = "testcos1"
 
   versioning_enable = false

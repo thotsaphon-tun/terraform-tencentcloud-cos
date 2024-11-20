@@ -20,16 +20,9 @@ variable "create_bucket_policy" {
 # COS Bucket
 ###############
 
-variable "appid" {
-  description = "Your appid."
-  type        = string
-  default     = ""
-}
-
 variable "bucket_name" {
   description = "The name of the bucket."
   type        = string
-  default     = ""
 }
 
 variable "bucket_acl" {

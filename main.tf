@@ -1,5 +1,8 @@
+data "tencentcloud_user_info" "info" {}
+
 locals {
-  bucket       = "${var.bucket_name}-${var.appid}"
+  app_id       = data.tencentcloud_user_info.info.app_id
+  bucket       = "${var.bucket_name}-${local.app_id}"
   replica_role = var.versioning_enable ? var.replica_role : null
 }
 
@@ -90,7 +93,7 @@ resource "tencentcloud_cos_bucket" "cos" {
       prefix                    = lookup(replica_rules.value, "prefix", null)
     }
   }
-
+  
   versioning_enable = var.versioning_enable
 
   dynamic "website" {

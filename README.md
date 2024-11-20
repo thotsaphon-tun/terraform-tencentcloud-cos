@@ -95,8 +95,7 @@ module "cos-bucket" {
 | create_bucket | Controls if COS bucket should be created. | bool | true | no
 | create_bucket_domain_certificate | Controls if COS bucket domain certificate should be created. | bool | true | no
 | create_bucket_policy | Controls if COS bucket policy should be created. | bool | true | no
-| appid | Your appid. | string | "" | yes
-| bucket_name | The name of the bucket. | string | "" | yes
+| bucket_name | The name of the bucket. | string | | yes
 | bucket_acl | Access control list for the bucket. | string | private | no
 | bucket_body | The XML format of Access control list for the bucket. | string | "" | no
 | cors_rules | A rule of Cross-Origin Resource Sharing for the bucket. | list | [] | no
